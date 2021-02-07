@@ -9,6 +9,7 @@ foodList.addEventListener('click', getMealRecipe);
 closeBtnRecipe.addEventListener('click', () => {
     foodDetails.parentElement.classList.remove("showIngredient");
     mealDetailsCss.style.display = "none";
+    location.reload();
 });
 
 function getFoodList(){
