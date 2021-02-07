@@ -5,7 +5,7 @@ const closeBtnRecipe = document.getElementById('recipe-close-btn');
 const mealDetailsCss = document.querySelector('.meal-details');
 
 btnSearch.addEventListener('click', getFoodList);
-foodList.addEventListener('click', getMealRecipe);
+foodList.addEventListener('click', getIngredientList);
 closeBtnRecipe.addEventListener('click', () => {
     foodDetails.parentElement.classList.remove("showIngredient");
     mealDetailsCss.style.display = "none";
@@ -41,17 +41,17 @@ function getFoodList(){
     });
 };
 
-function getMealRecipe(event){
+function getIngredientList(event){
     event.preventDefault();
     if(event.target.classList.contains('recipe-btn')){
         let mealItem = event.target.parentElement.parentElement;
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
         .then(response => response.json())
-        .then(data => mealRecipeModal(data.meals));
+        .then(data => IngredientListModal(data.meals));
     }
 }
 
-function mealRecipeModal(meal){
+function IngredientListModal(meal){
     console.log(meal);
     meal = meal[0];
     let html = `
