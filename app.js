@@ -1,17 +1,17 @@
-const searchBtn = document.getElementById('search-btn');
-const mealList = document.getElementById('meal');
-const mealDetailsContent = document.querySelector('.meal-details-content');
-const recipeCloseBtn = document.getElementById('recipe-close-btn');
+const btnSearch = document.getElementById('search-btn');
+const foodList = document.getElementById('meal');
+const foodDetails = document.querySelector('.meal-details-content');
+const closeBtnRecipe = document.getElementById('recipe-close-btn');
 const mealDetailsCss = document.querySelector('.meal-details');
 
-searchBtn.addEventListener('click', getMealList);
-mealList.addEventListener('click', getMealRecipe);
-recipeCloseBtn.addEventListener('click', () => {
-    mealDetailsContent.parentElement.classList.remove("showIngredient");
+btnSearch.addEventListener('click', getFoodList);
+foodList.addEventListener('click', getMealRecipe);
+closeBtnRecipe.addEventListener('click', () => {
+    foodDetails.parentElement.classList.remove("showIngredient");
     mealDetailsCss.style.display = "none";
 });
 
-function getMealList(){
+function getFoodList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchInputTxt}`)
     .then(response => response.json())
@@ -32,7 +32,7 @@ function getMealList(){
                 `;
             });
         } 
-        mealList.innerHTML = html;
+        foodList.innerHTML = html;
     });
 };
 
@@ -65,6 +65,6 @@ function mealRecipeModal(meal){
                 </ul>
             </div>
         `;
-    mealDetailsContent.innerHTML = html;
-    mealDetailsContent.parentElement.classList.add('showIngredient');
+    foodDetails.innerHTML = html;
+    foodDetails.parentElement.classList.add('showIngredient');
 }
