@@ -142,7 +142,7 @@ body{
     text-align: left;
     border-radius: 5px;
     overflow-y: scroll;
-    border: 5px solid rgba(3, 78, 78, 0.198);
+    border: 5px solid #E5CC62;
 }
 .closed_btn{
     background-color: transparent;
