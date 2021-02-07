@@ -182,10 +182,12 @@ body{
 .showIngredient{
     width: 30%;
 }
-.notFound{
+.invalidInput{
     grid-template-columns: 1fr !important;
-    color: red;
-    font-size: 1.8rem;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
     font-weight: 600;
     width: 100%;
+    font-family: 'Bungee Inline', cursive;
+    font-weight: 500;
 }

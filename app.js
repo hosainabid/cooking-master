@@ -14,7 +14,7 @@ closeBtnRecipe.addEventListener('click', () => {
 
 function getFoodList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchInputTxt}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
         let html = "";
@@ -32,7 +32,11 @@ function getFoodList(){
                     </div>
                 `;
             });
-        } 
+            foodList.classList.remove('invalidInput');
+        } else{
+            html = "Please write something valid";
+            foodList.classList.add('invalidInput');
+        }
         foodList.innerHTML = html;
     });
 };
