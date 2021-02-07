@@ -138,14 +138,11 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     background: #fff;
     text-align: left;
     border-radius: 5px;
     overflow-y: scroll;
+    border: 5px solid rgba(3, 78, 78, 0.198);
 }
 .closed_btn{
     background-color: transparent;
